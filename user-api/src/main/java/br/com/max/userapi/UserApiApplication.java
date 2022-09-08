@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import java.util.List;
 
+@EnableEurekaClient
 @SpringBootApplication
 public class UserApiApplication implements CommandLineRunner {
 
@@ -22,7 +24,7 @@ public class UserApiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		userRepository.saveAll(List.of(new User(null,"Maximiliano_1","maximiliano@emial.com","123",20.0),
-				                       new User(null,"Maximiliano_2","maximiliano@emial.com","123",1000.0)));
+				new User(null,"Maximiliano_2","maximiliano@emial.com","123",1000.0)));
 
 	}
 }
